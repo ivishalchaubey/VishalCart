@@ -1,0 +1,43 @@
+{% extends 'jinga.html' %}
+
+{%block title%}LogIn{%endblock%}
+
+
+	{%block style%}
+
+		
+
+		{%load static%}
+			<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+
+	{%endblock%}
+
+	{%block navitom%}
+		<a href="{%url 'signup'%}" class="login cart">SignUp</a>
+		{%endblock%}
+			{%if error%}
+				<h4>
+					{{error}}
+				</h4>
+			{%endif%}
+
+{%block body%}
+
+	<div class="box_login">
+
+		<div class="image">
+			<img src="{%static 'photos/login.png'%}">
+		</div>
+			<div class="login">
+				<form method="post" action="{%url 'afterlogin'%}">
+					{% csrf_token %}
+					<input type="name" name="uname" placeholder="Enter Your User Name">
+					<input type="password" name="password" placeholder="Enter Your Password">
+					<input type="submit" value="Submit">
+					
+				</form>
+		    </div>
+
+	</div>
+
+{%endblock%}

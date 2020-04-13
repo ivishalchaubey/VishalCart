@@ -1,0 +1,59 @@
+{% extends 'jinga.html' %}
+{%block title%}LogIn{%endblock%}
+	
+	{%block navitom%}
+		<a href="{%url 'afterlogin'%}" class="login cart">User Page</a>
+		{%endblock%}
+
+	{%block style%}
+
+		
+
+		{%load static%}
+			<link rel="stylesheet" type="text/css" href="{% static 'upload.css' %}">
+	{%endblock%}
+
+{%block body%}
+
+		<div class="uploaddetails">
+					<div class="image">
+
+						<img src="{%static 'photos/signup.png'%}">
+					</div>
+					<div class="other">
+					<form method="post" action="{% url 'uploadetail' %}" enctype="multipart/form-data">
+						{% csrf_token %}
+						<table>
+							
+					<tr>
+						<th>Name :</th>	   <td> <input type="name" name="name" placeholder="Enter Your Product Name"></td>
+					</tr>
+					<tr>
+						<th>Photo : </th>	    <td><input type="file" name="image"></td>
+					</tr>
+					<tr>
+						<th>Price: : </th>	   <td> <input type="number" name="price" placeholder="Enter Your Product Price"></td>
+					</tr>	
+					<tr>
+						<th>Email :  </th> 		  <td>  <input type="email" name="email" placeholder="Enter Your Email Address"></td>
+					</tr>
+					<tr>	
+					<th>Mobile No. :</th>	  <td>  <input type="text" name="mobile" placeholder="Enter Your Phone Number"></td>
+					</tr>
+					<tr>	
+					<th>Location :</th>	  <td>  <input type="text" name="location" placeholder="Enter Your Location"></td>
+					</tr>
+					<tr>	
+					<th>Description :	</th>  <td>   <textarea name="desc" style="width: 265px; height: 55px;">
+					</textarea>
+					</td>
+					</tr>
+					
+					<tr>	<th colspan="2">	<input type="submit" name="submit" value="Submit"></th>
+
+					</tr>		</table>
+					</form>
+				</div>
+				</div>
+
+{%endblock%}

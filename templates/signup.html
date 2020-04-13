@@ -1,0 +1,62 @@
+{% extends 'jinga.html' %}
+
+	{%block title%}SignUp{%endblock%}
+
+
+	{%block style%}
+
+		
+
+		{%load static%}
+			<link rel="stylesheet" type="text/css" href="{%static 'signup.css'%}">
+
+	{%endblock%}
+	{%block navitom%}
+		<a href="{%url 'login'%}" class="login cart">LogIn</a>
+		{%endblock%}
+
+		{%block body%}
+				<div class="sighupform">
+					<div class="image">
+
+						<img src="{%static 'photos/signup.png'%}">
+					</div>
+					<div class="other">
+					<form method="post" action="{% url 'sighupsubmit' %}">
+						{% csrf_token %}
+						<table>
+							
+					<tr>
+						<th>First Name :</th>	   <td> <input type="name" name="fname" placeholder="Enter Your First Name"></td>
+					</tr>
+					<tr>
+						<th>Last name : </th>	    <td><input type="name" name="lname" placeholder="Enter Your Last Name"></td>
+					</tr>
+					<tr>
+						<th>User Name : </th>	   <td> <input type="name" name="uname" placeholder="Enter Your User Name"></td>
+					</tr>	
+					<tr>
+						<th>Email :  </th> 		  <td>  <input type="email" name="email" placeholder="Enter Your Email Address"></td>
+					</tr>
+					<tr>	
+					<th>Mobile No. :</th>	  <td>  <input type="text" name="number" placeholder="Enter Your Phone Number"></td>
+					</tr>
+					<tr>	
+					<th>Date of Birth :</th>	  <td>  <input type="date" name="dob" placeholder="Enter Your Date Of Birth"></td>
+					</tr>
+					<tr>	
+						<th>Password :	</th>  <td>   <input type="password" name="pass1" placeholder="Enter Your First Name"></td>
+					</tr>
+					<tr>
+						<th>Conform Password :</th><td>	<input type="password" name="pass2" placeholder="Enter Your First Name"></td>
+
+					</tr>
+					<tr>	<th colspan="2">	<input type="submit" name="submit" value="Submit"></th>
+
+					</tr>		</table>
+					</form>
+				</div>
+				</div>
+
+		{%endblock%}
+

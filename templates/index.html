@@ -1,0 +1,42 @@
+{% extends 'jinga.html' %}
+
+	{% block title %} Vishal {% endblock %}
+	    {%block navitom%}
+		<a href="{%url 'signup'%}" class="login cart">Sign Up</a>
+		{%endblock%}
+
+			{%block style%}
+				{%load static%}
+					<link rel="stylesheet" type="text/css" href="{%static 'index.css'%}">
+			{%endblock%}
+
+	{% block body %}
+
+	<div class="intro">
+		<h1>Welcome To Our VishalCart</h1>
+		<p>You can buy and sell any product in there site and enjoy</p>
+	</div>
+	<div class="items">
+
+			{%for my_itom in itoms.all%}
+				<div class="item">
+
+								<div class="image">
+									<img src="{{my_itom.photo}}">
+								</div>
+								<div class="title">
+									<b>{{my_itom.name}}</b>
+								</div>
+								<div class="description">
+									<p>Price :{{my_itom.price}}.00₹</p>
+								</div>
+								<div class="buttons">
+									<a href="#">Cart</a>
+									<a href="{% url 'detail' my_itom.id %}">View</a>
+								</div>
+				</div>
+				{%endfor%}
+
+	</div>
+	{% endblock %}
+

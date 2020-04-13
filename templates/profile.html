@@ -1,0 +1,22 @@
+{% extends 'jinga.html' %}
+
+	{%block title%}LogIn{%endblock%}
+	    {{%block navitom%}
+		<li><a href="{%url 'logout'%}" class="login cart">Log Out</a></li>
+		<li><a href="{%url 'upload'%}">Upload Details</a></li>
+		
+		{%endblock%}
+
+			{%block style%}
+				{%load static%}
+					<link rel="stylesheet" type="text/css" href="{%static 'profile.css'%}">
+				{%endblock%}
+
+
+
+	{% block body %}
+
+
+	<h1>Name :{{user.User}}</h1>
+
+	{%endblock%}

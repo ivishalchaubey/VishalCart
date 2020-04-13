@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+</head>
+	{%block style%}
+	{%load static%}
+	{%endblock%}
+	<link rel="stylesheet" type="text/css" href="{% static 'jinja.css' %}">
+	
+<body>
+	<nav>
+		<div class="navigations">
+			<ul>
+				<li><a href="{% url 'home'%}" class="logo">VishalCart</a></li>
+				<li><input type="search" name="search" class="search" placeholder="Serch any items"></li>
+				<li><input type="submit" value="Submit" class="search"></li>
+				<li><a href="#" class="cart">Cart</a></li>
+				{%block navitom%}{%endblock%}
+			</ul>
+		</div>
+	</nav>
+
+	{% block body %}
+	{% endblock %}
+
+{%block footer%}
+
+	<footer>
+		<p>&copy copyright 2020 Vishal Chaubey</p>
+	</footer>
+{%endblock%}
+</body>
+</html>

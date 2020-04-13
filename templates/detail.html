@@ -1,0 +1,46 @@
+{%extends 'jinga.html'%}
+
+{% block title %} {{full_detail.name}} {% endblock %}
+
+{%block style%}
+				{%load static%}
+					<link rel="stylesheet" type="text/css" href="{%static 'detail.css'%}">
+			{%endblock%}
+
+
+	{%block body%}
+
+
+	<div class="detail">
+		<div class="image">
+			<img src="{{full_detail.photo}}">
+		</div>
+				<hr>
+		<div class="other">
+			<div class="name">
+				{{full_detail.name}}
+			</div>
+			<div class="price">
+				<h1>Special price</h1><br>
+				<h3>₹{{full_detail.price}}.00/</h3>
+			</div>
+			<hr>
+			<div class="description">
+				<h1>Product Details</h1><br>
+				{{full_detail.description}}
+			</div>
+			<hr>
+			<div class="contect">
+				<h1>Contect Details</h1><br><hr>
+				<p>
+				Email : {{full_detail.email}}<br><br>
+				Phone : {{full_detail.phone}}
+				</p>
+			</div>
+		</div>
+		
+	</div>
+
+
+
+	{%endblock%}

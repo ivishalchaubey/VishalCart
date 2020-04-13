@@ -1,0 +1,39 @@
+body{
+	background: rgba(7,177,0,0.4)
+}
+.box_login{
+	display: inline-flex;
+}
+form{
+	background: rgba(44,81,0,0.5);
+	display: inline-grid;
+	padding: 42px;
+	margin: 20px;
+  border-radius:40px;
+	margin-left:60%;
+	margin-top: 13%;
+}
+form input{
+	margin: 12px;
+	width: 320px;
+	height: 45px;
+  border-radius: 10px;
+	font-size: 17px;
+	text-align: center;
+}
+.image{
+	margin-left: 15%;
+	margin-top: 7%
+}
+form input[type=submit]{
+	background: none;
+	border: 4px solid black;
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+	cursor: pointer;
+}
+form input[type=submit]:hover{
+	background: gold;
+	color: black;
+}

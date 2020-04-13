@@ -1,0 +1,26 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+nav{
+	background: black;
+}
+.navigations li{
+	display: inline-block;
+	list-style-type: none;
+	padding: 12px;
+}
+.navigations a{
+	color: wheat;
+	text-decoration: none;
+}
+
+
+
+
+
+footer{
+	background: black;
+	color: white;
+	text-align: center;
+}
